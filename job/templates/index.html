@@ -1,0 +1,75 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navbar.html' %}
+
+<style>
+    .container{
+    max-width : 90%
+    }
+</style>
+<div class="container-fluid mt-2" >
+    <img src="{% static 'images/job5.jpg' %}" style="height:400px;width:100%">
+
+</div>
+<div class="container" style="background-color : black;margin-top:1%">
+<h1 class="text-center text-white">-------\\OUR PLACED STUDENTS\\------</h1>
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="{% static 'images/s1.jpg' %}" style="height:200px; width:100%; margin-top:2%; border-radius:50%">
+               <div class="content">
+                <p class="text-white text-center">Facebook</p>
+               </div>
+        </div>
+        <div class="col-sm-3">
+            <img src="{% static 'images/s6.jpg' %}" style="height:200px; width:100%; margin-top:2%; border-radius:50%">
+               <div class="content">
+                <p class="text-white text-center">Amazon</p>
+               </div>
+        </div>
+        <div class="col-sm-3">
+            <img src="{% static 'images/s2.jpg' %}" style="height:200px; width:100%; margin-top:2%; border-radius:50%">
+               <div class="content">
+                <p class="text-white text-center">Linkedin</p>
+               </div>
+        </div>
+        <div class="col-sm-3">
+            <img src="{% static 'images/s4.jpg' %}" style="height:200px; width:100%; margin-top:2%; border-radius:50%">
+            <div class="content">
+                <p class="text-white text-center">Google</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="{% static 'images/s3.jpg' %}" style="height:200px; width:100%; margin-top:2%; border-radius:50%">
+               <div class="content">
+                <p class="text-white text-center">Samsung</p>
+               </div>
+        </div>
+        <div class="col-sm-3">
+            <img src="{% static 'images/s5.jpg' %}" style="height:200px; width:100%; margin-top:2%; border-radius:50%">
+               <div class="content">
+                <p class="text-white text-center">Apple</p>
+               </div>
+        </div>
+        <div class="col-sm-3">
+            <img src="{% static 'images/s7.jpg' %}" style="height:200px; width:100%; margin-top:2%; border-radius:50%">
+               <div class="content">
+                <p class="text-white text-center">HCL</p>
+               </div>
+        </div>
+        <div class="col-sm-3">
+            <img src="{% static 'images/s8.jpg' %}" style="height:200px; width:100%; margin-top:2%; border-radius:50%">
+            <div class="content">
+                <p class="text-white text-center">Microsoft</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+
+{% endblock %}

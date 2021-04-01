@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Job Portal</title>
+    <style>
+        .nav-link{
+            color:white;
+            margin-right:20px;
+        }
+
+        .nav-link:hover{
+            color:yellow;
+            font-weight:bold;
+            background-color:red;
+            border-radius:10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-sm-4">
+            <img src="{% static 'images/job2.jpg' %}" width="180px" height="150px">
+        </div>
+        <div class="col-sm-4">
+            <span style="font-weight:bold;font-size:30px">
+                <span style="color : red">Job Portal</span>
+                <span style="color : green">Portal System</span>
+            </span>
+        </div>
+        <div class="col-sm-4 " style="padding-left:10%">
+            <span style="font-weight:bold; font-size:30px">
+                <span><i class="fa fa-twitter pl-2"></i></span>
+                <span><i class="fa fa-linkedin pl-2"></i></span>
+                <span><i class="fa fa-facebook pl-2"></i></span>
+                <span><i class="fa fa-telegram pl-2"></i></span>
+            </span>
+        </div>
+
+    </div>
+
+</div>
+<nav class="navbar navbar-expand-sm" style="background-color : green">
+        <a class="navbar-brand text-white pl-1 font-weight-bold" style="font-size:20px">Job Portal</a>
+<ul class="navbar-nav">
+    <li class="nav-item ">
+        <a class="nav-link" href="{% url 'user_home' %}" style="margin-left:280px">Home</a>
+    </li>
+    <li class="nav-item ">
+        <a class="nav-link" href="{% url 'user_joblist' %}"> Job List</a>
+    </li>
+    <li class="nav-item ">
+        <a class="nav-link" href="{% url 'user_change_pass' %}">Change Password</a>
+    </li>
+    <li class="nav-item ">
+        <a class="nav-link" href="{% url 'user_logout' %}">Logout</a>
+    </li>
+
+</ul>
+    </nav>
+</body>
+</html>

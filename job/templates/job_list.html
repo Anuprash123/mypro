@@ -1,0 +1,35 @@
+{% load static %}
+{% block body  %}
+{% include 'recruiter_navigation.html' %}
+
+<marquee style="font-size:25px;color:red; background-color:black;font-weight:bold;margin-top:2%">
+      JOB Detail
+</marquee>
+<hr>
+
+<table class=" table table-warning container">
+      <thead>
+      <tr>
+      <th>S.No.</th>
+      <th>Creation Date</th>
+      <th>Title</th>
+      <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for i in data %}
+      <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.post_date}}</td>
+            <td>{{i.title}}</td>
+            <td><a href="{% url 'edit_jobdetail' i.id %}" class="btn btn-success btn-sm ">Edit</a>
+                <a href="{% url 'delete_job' i.id %}" class="btn btn-danger btn-sm " onclick="return confirm('Are You Sure?')">Delete</a>
+            </td>
+      </tr>
+      {% endfor %}
+      </tbody>
+</table>
+
+
+{% include 'footer.html' %}
+{% endblock %}

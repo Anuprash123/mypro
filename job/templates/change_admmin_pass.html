@@ -1,0 +1,59 @@
+{% load static %}
+{% block body  %}
+{% include 'admin_navbar.html' %}
+
+<script>
+    function checkpass()
+    {
+    if(document.changepassword.npass.value!=document.changepassword.cnpass.value)
+    {
+    alert('Password Did not match');
+    document.changepassword.cnpass.focus();
+    return false;
+    }
+    return true;
+    }
+</script>
+
+<marquee style="font-size:25px;color:red; background-color:black;font-weight:bold;margin-top:2%">
+      change Password page
+</marquee>
+<hr>
+<form class="container mt-5" method="post" name="changepassword" onsubmit="return checkpass()">
+    {% csrf_token %}
+    <label><b>Current Password</b></label>
+    <input type="password" class="form-control" name="cpass" required>
+
+    <label><b>New Password</b></label>
+    <input type="password" class="form-control" name="npass" required>
+
+    <label><b>confirm new password</b></label>
+    <input type="password" class="form-control" name="cnpass" required>
+
+
+    <input type="submit" class="btn btn-primary mt-2">
+
+</form>
+
+{% include 'footer.html' %}
+{% ifequal error "no" %}
+<script>
+    alert("Password Chganged Succesfully")
+    window.location = ('{% url 'user_logout' %}')
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %}
+<script>
+    alert("Password did not match, Try Again....")
+</script>
+{% endifequal %}
+
+{% ifequal error "not" %}
+<script>
+    alert("Your current password is wrong, Try Again....")
+</script>
+{% endifequal %}
+
+
+{% endblock %}

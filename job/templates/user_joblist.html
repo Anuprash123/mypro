@@ -1,0 +1,50 @@
+{% load static %}
+{% block body  %}
+{% include 'user_navigation.html' %}
+
+<marquee style="font-size:25px;color:red; background-color:black;font-weight:bold;margin-top:2%">
+      JOB Detail
+</marquee>
+<hr>
+<table class=" table table-warning ">
+      <thead>
+      <tr>
+      <th>S.No.</th>
+      <th>Creation Date</th>
+      <th>Job Profile</th>
+      <th>Skills</th>
+      <th>Experience</th>
+      <th>Location</th>
+      <th>Salary</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Vcancies</th>
+      <th>Company</th>
+      <th>Contact No.</th>
+      <th>Send Resume</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for i in data %}
+      <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.post_date}}</td>
+            <td>{{i.title}}</td>
+            <td>{{i.skills}}</td>
+            <td>{{i.experience}}</td>
+            <td>{{i.location}}</td>
+            <td>{{i.salary}}</td>
+            <td>{{i.satart_date}}</td>
+            <td>{{i.end_date}}</td>
+            <td>{{i.discription}}</td>
+            <td>{{i.recruiter.company}}</td>
+            <td>{{i.recruiter.mobile}}</td>
+            <td>{{i.recruiter.user.username}}</td>
+      </tr>
+      {% endfor %}
+      </tbody>
+</table>
+
+
+{% include 'footer.html' %}
+{% endblock %}
